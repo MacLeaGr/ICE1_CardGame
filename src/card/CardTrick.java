@@ -14,13 +14,15 @@ public class CardTrick {
     
     public static void main(String[] args)
     {
+        int min1 = 0; int max1 = 3;
+        int min2 = 1; int max2 =13;
         Card[] magicHand = new Card[7];
         
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue((int)Math.floor(Math.random() * (max2 - min2 +1) + min2));
+            c.setSuit(Card.SUITS[(int)Math.floor(Math.random() * (max1 - min1 +1) + min1)]);
         }
         
         //insert code to ask the user for Card value and suit, create their card
