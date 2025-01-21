@@ -59,10 +59,10 @@ public class CardTrick {
         {
             String progSuitString = magicHand[i].getSuit();
             int cardSuit = 0;
-            if(userSuitString.equals("hearts")){cardSuit = 0;}
-            else if (progSuitString.equals("diamonds")){cardSuit = 1;}
-            else if (progSuitString.equals("spades")){cardSuit = 2;}
-            else if (progSuitString.equals("clubs")){cardSuit = 3;}
+            if(progSuitString.equals("Hearts")){cardSuit = 0;}
+            else if (progSuitString.equals("Diamonds")){cardSuit = 1;}
+            else if (progSuitString.equals("Spades")){cardSuit = 2;}
+            else if (progSuitString.equals("Slubs")){cardSuit = 3;}
             int cardValue = magicHand[i].getValue();
             
             if (userSuit == cardSuit && userValue == cardValue)
