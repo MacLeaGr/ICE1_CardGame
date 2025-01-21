@@ -62,7 +62,7 @@ public class CardTrick {
             if(progSuitString.equals("Hearts")){cardSuit = 0;}
             else if (progSuitString.equals("Diamonds")){cardSuit = 1;}
             else if (progSuitString.equals("Spades")){cardSuit = 2;}
-            else if (progSuitString.equals("Slubs")){cardSuit = 3;}
+            else if (progSuitString.equals("Clubs")){cardSuit = 3;}
             int cardValue = magicHand[i].getValue();
             
             if (userSuit == cardSuit && userValue == cardValue)
