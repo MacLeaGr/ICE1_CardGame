@@ -30,6 +30,7 @@ public class CardTrick {
         }
         
         //insert code to ask the user for Card value and suit, create their card
+        /* CODE REMOVED - REPLACED WITH LUCKY CARD
         Scanner user = new Scanner(System.in);
         System.out.println("Select a Suit - Hearts, Diamonds, Spades, Clubs :");
         String userSuitString = user.next();
@@ -42,6 +43,16 @@ public class CardTrick {
         System.out.println("Select a Card Value - 1=A, ... 11=J, 12=Q, 13=K");
         int userValue = user.nextInt();
         user.close();
+        */
+        //LUCKY CARD CODE
+        int userSuit = 2;
+        int userValue = 2;
+        
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit(Card.SUITS[2]);
+        
+        magicHand[2] = luckyCard;
         // and search magicHand here
         int matching = 0;
         for (int i=0; i<magicHand.length; i++)
@@ -65,8 +76,8 @@ public class CardTrick {
             System.out.println("Sorry, your card does not match");
         }else
         {
-            System.out.println("Wow! Your card matched a random card!");
+            System.out.println("Wow! Your card matched a random card, thats Lucky");
         }
-        // add one luckcard hard code 2,clubs
+        // add one luckcard hard code 2,clubs (DONE)
     }
 }
