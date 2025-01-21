@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package card;
+import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -22,13 +23,49 @@ public class CardTrick {
         {
             Card c = new Card();
             c.setValue((int)Math.floor(Math.random() * (max2 - min2 +1) + min2));
-            c.setSuit(Card.SUITS[(int)Math.floor(Math.random() * (max1 - min1 +1) + min1)]);
+            int suitValue = (int)Math.floor(Math.random() * (max1 - min1 +1) + min1);
+            c.setSuit(Card.SUITS[suitValue]);
+            magicHand[i] = c;
         }
         
         //insert code to ask the user for Card value and suit, create their card
+        Scanner user = new Scanner(System.in);
+        System.out.println("Select a Suit - Hearts, Diamonds, Spades, Clubs :");
+        String userSuitString = user.next();
+        userSuitString = userSuitString.toLowerCase();
+        int userSuit = 0;
+        if(userSuitString.equals("hearts")){userSuit = 0;}
+        else if (userSuitString.equals("diamonds")){userSuit = 1;}
+        else if (userSuitString.equals("spades")){userSuit = 2;}
+        else if (userSuitString.equals("clubs")){userSuit = 3;}
+        System.out.println("Select a Card Value - 1=A, ... 11=J, 12=Q, 13=K");
+        int userValue = user.nextInt();
+        user.close();
         // and search magicHand here
+        int matching = 0;
+        for (int i=0; i<magicHand.length; i++)
+        {
+            String progSuitString = magicHand[i].getSuit();
+            int cardSuit = 0;
+            if(userSuitString.equals("hearts")){cardSuit = 0;}
+            else if (progSuitString.equals("diamonds")){cardSuit = 1;}
+            else if (progSuitString.equals("spades")){cardSuit = 2;}
+            else if (progSuitString.equals("clubs")){cardSuit = 3;}
+            int cardValue = magicHand[i].getValue();
+            
+            if (userSuit == cardSuit && userValue == cardValue)
+            {
+                matching++;
+            }
+        }
         //Then report the result here
+        if (matching == 0)
+        {
+            System.out.println("Sorry, your card does not match");
+        }else
+        {
+            System.out.println("Wow! Your card matched a random card!");
+        }
         // add one luckcard hard code 2,clubs
     }
-    
 }
